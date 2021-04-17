@@ -18,7 +18,7 @@ RUN yum update -y \
  && yum -y install rsyslog \
  && yum clean all \
  && rm -rf /var/cache/yum \
- && chmod -R ugo+rw,+X /etc/rsyslog.conf /var/log/ /var/run/
+ && sudo chmod -R ugo+rw,+X /etc/rsyslog.conf /var/log/ /var/run/
 
 VOLUME /var/log/
 WORKDIR /var/log/
