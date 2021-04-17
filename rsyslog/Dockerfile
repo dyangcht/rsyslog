@@ -3,6 +3,7 @@ FROM registry.access.redhat.com/rhel7:latest
 # FROM registry.stage.redhat.io/rhel7/rhel:7.9
 
 ADD rsyslog.conf /etc/rsyslog.conf
+RUN subscription-manager attach --auto
 RUN INSTALL_PKGS="\
 rsyslog \
 rsyslog-gnutls \
