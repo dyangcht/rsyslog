@@ -4,7 +4,7 @@ FROM registry.access.redhat.com/ubi7/ubi
 
 ADD rsyslog.conf /etc/rsyslog.conf
 RUN yum-config-manager --enable rhel-7-server-eus-rpms && yum repolist enabled
-RUN subscription-manager attach --auto
+# RUN subscription-manager attach --auto
 RUN INSTALL_PKGS="\
 rsyslog \
 rsyslog-gnutls \
