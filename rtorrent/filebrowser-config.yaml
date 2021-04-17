@@ -1,0 +1,10 @@
+---
+port: 8080
+noAuth: true # We will use the OpenShift OAuth Proxy
+database: "/opt/filebrowser/var/database.db"
+log: stdout
+plugin: ''
+scope: "/torrent"
+allowCommands: false
+allowEdit: true
+allowNew: true
