@@ -1,5 +1,5 @@
 # FROM registry.access.redhat.com/rhel7:latest
-FROM registry.access.redhat.com/rhel7:latest
+FROM registry.access.redhat.com/rhel7:7.9
 # FROM registry.stage.redhat.io/rhel7/rhel:7.9
 
 ADD rsyslog.conf /etc/rsyslog.conf
