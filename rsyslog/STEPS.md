@@ -3,7 +3,7 @@
 ### create config map from files and mount it on apicast-staging
 ```
 oc create configmap apicast-ver-module --from-file=verbose.lua --from-file=apicast-policy.json
-oc set volume dc/apicast-staging --add --name=apicast-custom-module --mount-path /opt/app-root/src/src/custom/ --type=configmap --configmap-name=apicast-ver-module --overwrite
+oc set volume dc/apicast-staging --add --name=apicast-custom-module --mount-path /opt/app-root/src/src/apicast/policy/verbose --type=configmap --configmap-name=apicast-ver-module --overwrite
 oc set volume dc/apicast-staging --add --name=apicast-01-module --mount-path /opt/app-root/src/policies/verbose/0.1/ --type=configmap --configmap-name=apicast-ver-module --overwrite
 ```
 ### set APIcast module name and path
