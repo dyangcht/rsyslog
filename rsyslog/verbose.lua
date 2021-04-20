@@ -126,6 +126,7 @@ function _M.body_filter()
     request["uri_args"] = ngx.req.get_uri_args()
     request["request_id"] = ngx.var.request_id
     dict["request"] = request
+    ngx.log(ngx.WARN, "log request message : " .. cjson.encode(request) .. " end....")
 
     -- Gather information of the response
     local response = {}
@@ -140,6 +141,7 @@ function _M.body_filter()
     response["status"] = ngx.status
     dict["response"] = response
 
+    ngx.log(ngx.WARN, "log response message : " .. cjson.encode(response) .. " end....")
     -- timing stats
     local upstream = {}
     upstream["addr"] = ngx.var.upstream_addr
@@ -151,9 +153,10 @@ function _M.body_filter()
     upstream["response_time"] = ngx.var.upstream_response_time
     upstream["status"] = ngx.var.upstream_status
     dict["upstream"] = upstream
+    ngx.log(ngx.WARN, "log upstream message : " .. cjson.encode(upstream) .. " end....")
 
     -- do_log(cjson.encode(dict))
-    ngx.log(ngx.WARN, "do to log message : " .. cjson.encode(dict) .. " end....")
+    -- ngx.log(ngx.WARN, "do to log message : " .. cjson.encode(dict) .. " end....")
   end
   return apicast:body_filter()
 end
