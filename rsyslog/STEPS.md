@@ -18,6 +18,7 @@ oc rollout latest apicast-staging
 
 ### Change some values like Deployment's version and selector
 ```
+$ vi jaeger-all-in-one-template.yml
 Original: apiVersion: extensions/v1beta1
 New: apiVersion: apps/v1
 Add New:
@@ -27,7 +28,7 @@ Add New:
          jaeger-infra: jaeger-pod
 ```
 
-``` vi jaeger-all-in-one-template.yml ```
+
 
 ### Apply it
 ```
