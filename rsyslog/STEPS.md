@@ -30,14 +30,23 @@ Add New:
 
 
 
-### Apply it
+### Apply these as following
 ```
-oc project threescale-1ff4
+oc project threescale-<1ff4>
 oc process -f jaeger-all-in-one-template.yml| oc create -f -
 oc create configmap jaeger-config --from-file=jaeger_config.json
 oc set volume dc/apicast-staging --add -m /tmp/jaeger/ --configmap-name jaeger-config
 oc set env dc/apicast-staging OPENTRACING_TRACER=jaeger OPENTRACING_CONFIG=/tmp/jaeger/jaeger_config.json
 ```
+
+### Get the Jaeger's Query URL
+```
+oc get route jaeger-query
+```
+
+WORKDIR: $HOME/opt/redhat/ocp4/OpenShift-Docker-Images/rsyslog
+<br/>
+
 ### Reference
 
 https://itnext.io/adding-opentracing-support-to-apicast-api-gateway-a8e0a38347d2 <br/>
