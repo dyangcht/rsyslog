@@ -17,6 +17,15 @@ oc rollout latest apicast-staging
 ``` wget https://raw.githubusercontent.com/jaegertracing/jaeger-openshift/master/all-in-one/jaeger-all-in-one-template.yml ```
 
 ### Change some values like Deployment's version and selector
+```
+Original: apiVersion: extensions/v1beta1
+New: apiVersion: apps/v1
+Add New:
+     selector:
+       matchLabels:
+         app: jaeger
+         jaeger-infra: jaeger-pod
+```
 
 ``` vi jaeger-all-in-one-template.yml ```
 
