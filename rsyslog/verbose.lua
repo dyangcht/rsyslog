@@ -9,11 +9,13 @@ local mt = { __index = setmetatable(_M, { __index = apicast }) }
 function _M.new(configuration)
   local config = configuration or {}
   local set_header = config.set_header or {}
-  local set_body = config.set_body or {}
+  -- local set_body = config.set_body or {}
+  
   for key, value in ipairs(set_header) do
     ngx.log(ngx.WARN, "set header name: " .. key .. " value: " .. value)
   end
-  ngx.log(ngx.WARN, "new()..." .. set_body)
+  -- ngx.log(ngx.WARN, "new()..." .. set_body)
+  ngx.log(ngx.WARN, "new()...")
   return setmetatable({}, mt)
 end
 
