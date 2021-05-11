@@ -28,7 +28,8 @@
       },
       "set_body": {
         "type": "string",
-        "description": "HTTP body content"
+        "description": "HTTP body content",
+        "default": "Default string"
       }
     }
   }
