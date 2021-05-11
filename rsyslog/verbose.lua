@@ -10,7 +10,7 @@ function _M.new(configuration)
   local config = configuration or {}
   local set_header = config.set_header or {}
   local set_body = config.set_body or {}
-  for key, value ipairs(set_header) do
+  for key, value in ipairs(set_header) do
     ngx.log("set header name: ", key, " value: ", value)
   end
   ngx.log(ngx.WARN, "new()...", set_body)
