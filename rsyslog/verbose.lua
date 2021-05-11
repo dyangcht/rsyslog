@@ -9,8 +9,7 @@ local mt = { __index = setmetatable(_M, { __index = apicast }) }
 function _M.new(configuration)
   local config = configuration or {}
   local set_header = config.set_header or {}
-  local cfg = new(configuration)
-  local body = cfg.set_body or "testing default"
+  local body = config.set_body or "testing default"
   -- local set_body = config.set_body or {}
   
   for _, header in ipairs(set_header) do
