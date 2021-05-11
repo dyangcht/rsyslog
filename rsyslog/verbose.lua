@@ -14,7 +14,7 @@ function _M.new(configuration)
   for _, header in ipairs(set_header) do
     ngx.log(ngx.WARN, "set header name: " .. header.name .. " value: " .. header.value)
   end
-  ngx.log(ngx.WARN, "new()..." .. config['set_body'])
+  ngx.log(ngx.WARN, "new()..." .. config.set_body)
   ngx.log(ngx.WARN, "new()...")
   return setmetatable({}, mt)
 end
