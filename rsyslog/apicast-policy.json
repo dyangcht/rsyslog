@@ -8,6 +8,24 @@
     "title": "APIcast Verbose Policy",
     "description": "Version 0.1 verbose policy for logging payload",
     "type": "object",
-    "properties": { }
+    "properties": { 
+      "set_header": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "HTTP header name"
+            },
+            "value": {
+              "type": "string",
+              "description": "HTTP header value"
+            }
+          },
+          "required": ["name", "value"]
+        }
+      }
+    }
   }
 }
