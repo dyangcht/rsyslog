@@ -6,8 +6,14 @@ local cjson = require('cjson')
 local _M = { _VERSION = '0.0' }
 local mt = { __index = setmetatable(_M, { __index = apicast }) }
 
-function _M.new()
-  ngx.log(ngx.WARN, "new()...")
+function _M.new(configuration)
+  local config = configuration or {}
+  local set_header = config.set_header or {}
+  local set_body = config.set_body or {}
+  for key, value ipairs(set_header) do
+    ngx.log("set header name: ", key, " value: ", value)
+  end
+  ngx.log(ngx.WARN, "new()...", set_body)
   return setmetatable({}, mt)
 end
 
