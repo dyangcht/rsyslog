@@ -25,7 +25,7 @@
           },
           "required": ["name", "value"]
         }
-      }
+      },
       "set_body": {
         "type": "string",
         "description": "HTTP body content"
