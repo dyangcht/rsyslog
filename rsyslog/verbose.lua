@@ -11,7 +11,7 @@ function _M.new(configuration)
   local set_header = config.set_header or {}
   -- local set_body = config.set_body or {}
   
-  for header in ipairs(set_header) do
+  for _, header in ipairs(set_header) do
     ngx.log(ngx.WARN, "set header name: " .. header.name .. " value: " .. header.value)
   end
   -- ngx.log(ngx.WARN, "new()..." .. set_body)
