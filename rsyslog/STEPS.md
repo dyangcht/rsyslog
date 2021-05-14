@@ -52,4 +52,5 @@ WORKDIR: $HOME/opt/redhat/ocp4/OpenShift-Docker-Images/rsyslog
 ### Reference
 
 https://itnext.io/adding-opentracing-support-to-apicast-api-gateway-a8e0a38347d2 <br/>
-http://jaeger-query-threescale-1ff4.apps.shared-na4.na4.openshift.opentlc.com/search
+http://jaeger-query-threescale-1ff4.apps.shared-na4.na4.openshift.opentlc.com/search <br/>
+https://github.com/3scale/APIcast/tree/master/examples/policies
